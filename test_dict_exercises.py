@@ -17,8 +17,28 @@ def test_convert_input_list_into_dict_empty_both_lists():
     assert convert_input_lists_into_dict([], []) == {}
 
 
+def test_merge_two_dicts_into_one_happy_path():
+    assert merge_two_dicts_into_one({"one": 1, "two": 2, "three": 3}, {"three": 3, "four": 4, "five": 5}) == {"one": 1,
+                                                                                                              "two": 2,
+                                                                                                              "three": 3,
+                                                                                                              "four": 4,
+                                                                                                              "five": 5}
+
+
+def test_merge_two_dicts_into_one_with_the_same_dicts():
+    assert merge_two_dicts_into_one({"one": 1, "two": 2}, {"one": 1, "two": 2}) == {"one": 1, "two": 2}
+
+
+def test_merge_two_dicts_into_one_when_one_of_dict_is_empty():
+    assert merge_two_dicts_into_one({"one": 1, "two": 2}, {}) == {"one": 1, "two": 2}
+    assert merge_two_dicts_into_one({}, {"one": 1, "two": 2}) == {"one": 1, "two": 2}
+
+
 if __name__ == "__main__":
     test_convert_input_list_into_dict_happy_path()
     test_convert_input_list_into_dict_empty_keys_list()
     test_convert_input_list_into_dict_empty_values_list()
     test_convert_input_list_into_dict_empty_both_lists()
+    test_merge_two_dicts_into_one_happy_path()
+    test_merge_two_dicts_into_one_with_the_same_dicts()
+    test_merge_two_dicts_into_one_when_one_of_dict_is_empty()
