@@ -1,4 +1,4 @@
-from two_lists_into_a_dict import convert_input_lists_into_dict
+from dict_tasks import convert_input_lists_into_dict, merge_two_dicts_into_one
 
 
 def test_convert_input_list_into_dict_happy_path():
