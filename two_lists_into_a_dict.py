@@ -9,6 +9,3 @@ def convert_input_lists_into_dict(keys_list: List[str], values_list: List[int]) 
         converted_dictionary[keys_list[position]] = values_list[position]
     return converted_dictionary
 
-
-if __name__ == "__main__":
-    print(convert_input_lists_into_dict(["one", "two", "three"], [1, 2, 3]))
