@@ -23,8 +23,7 @@ def create_new_dict_from_extracted_values_of_another_dict(input_dict: Dict[str, 
     str, Any]:
     new_dict = {}
     for key in keys:
-        if key in input_dict:
-            new_dict.update({key: input_dict[key]})
+        new_dict[key] = input_dict[key]
     return new_dict
 
 
