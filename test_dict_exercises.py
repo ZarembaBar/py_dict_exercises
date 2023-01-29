@@ -1,7 +1,7 @@
 from dict_tasks import convert_input_lists_into_dict, merge_two_dicts_into_one, \
     print_value_from_nested_dict, create_new_dict_from_extracted_values_of_another_dict, \
     delete_given_list_of_keys_with_their_values, search_if_value_exists_in_dict, rename_key_of_a_dict, \
-    display_key_of_a_min_value
+    display_key_of_a_min_value, change_value_of_a_key_in_nested_dict
 
 
 def test_convert_input_list_into_dict_happy_path():
@@ -122,3 +122,14 @@ def test_display_key_of_a_min_value_happy_path():
         'history': 75
     }
     assert display_key_of_a_min_value(sample_dict) == 'Math'
+
+
+def test_change_value_of_a_key_in_nested_dict_happy_path():
+    sample_dict = {
+        'emp1': {'name': 'Jhon', 'salary': 7500},
+        'emp2': {'name': 'Emma', 'salary': 8000},
+        'emp3': {'name': 'Brad', 'salary': 500}
+    }
+    assert change_value_of_a_key_in_nested_dict(sample_dict) == {'emp1': {'name': 'Jhon', 'salary': 7500},
+                                                                 'emp2': {'name': 'Emma', 'salary': 8000},
+                                                                 'emp3': {'name': 'Brad', 'salary': 8500}}

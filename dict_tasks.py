@@ -51,3 +51,8 @@ def display_key_of_a_min_value(input_dict: Dict[str, int]) -> str:
     for key, value in input_dict.items():
         if value == min(input_dict.values()):
             return key
+
+
+def change_value_of_a_key_in_nested_dict(input_dict: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    input_dict["emp3"]["salary"] = 8500
+    return input_dict
