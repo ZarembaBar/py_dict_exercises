@@ -40,3 +40,8 @@ def search_if_value_exists_in_dict(input_dict: Dict[str, int], value: int) -> st
         return f"{value} present in a dict"
     else:
         return f"{value} is not in a dict"
+
+
+def rename_key_of_a_dict(input_dict: Dict[str, Any]) -> Dict[str, Any]:
+    input_dict["location"] = input_dict.pop("city")
+    return input_dict
