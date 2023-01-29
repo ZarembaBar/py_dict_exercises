@@ -1,5 +1,5 @@
 from dict_tasks import convert_input_lists_into_dict, merge_two_dicts_into_one, \
-    print_value_from_nested_dict
+    print_value_from_nested_dict, create_new_dict_from_extracted_values_of_another_dict
 
 
 def test_convert_input_list_into_dict_happy_path():
@@ -48,3 +48,14 @@ def test_print_value_from_nested_dict_happy_path():
     assert print_value_from_nested_dict(sampleDict, "physics") == 70
     assert print_value_from_nested_dict(sampleDict, "math") == 50
 
+
+def test_create_new_dict_from_extracted_values_of_another_dict_happy_path():
+    sample_dict = {
+        "name": "Kelly",
+        "age": 25,
+        "salary": 8000,
+        "city": "New york"}
+
+    assert create_new_dict_from_extracted_values_of_another_dict(sample_dict, ["name"]) == {"name": "Kelly"}
+    assert create_new_dict_from_extracted_values_of_another_dict(sample_dict, ["age", "name"]) == {"age": 25,
+                                                                                                   "name": "Kelly"}
