@@ -1,6 +1,6 @@
 from dict_tasks import convert_input_lists_into_dict, merge_two_dicts_into_one, \
     print_value_from_nested_dict, create_new_dict_from_extracted_values_of_another_dict, \
-    delete_given_list_of_keys_with_their_values
+    delete_given_list_of_keys_with_their_values, search_if_value_exists_in_dict
 
 
 def test_convert_input_list_into_dict_happy_path():
@@ -94,3 +94,10 @@ def test_delete_given_list_of_keys_with_their_values_with_list_of_all_keys_given
         "city": "New york"
     }
     assert delete_given_list_of_keys_with_their_values(sample_dict, ["name", "age", "salary", "city"]) == {}
+
+
+def test_search_if_value_exists_in_dict_happy_path():
+    sample_dict = {'a': 100, 'b': 200, 'c': 300}
+    assert search_if_value_exists_in_dict(sample_dict, 200) == "200 present in a dict"
+    assert search_if_value_exists_in_dict(sample_dict, 300) == "300 present in a dict"
+    assert search_if_value_exists_in_dict(sample_dict, 50) == "50 is not in a dict"
