@@ -17,18 +17,3 @@ def merge_two_dicts_into_one(dict1: Dict[str, int], dict2: Dict[str, int]) -> Di
 def print_value_from_nested_dict(input_dict: Dict[str, Dict[str, Dict[str, Dict[str, int]]]]) -> int:
     result = input_dict["class"]["student"]["marks"]["history"]
     return result
-
-
-if __name__ == "__main__":
-    sampleDict = {
-        "class": {
-            "student": {
-                "name": "Mike",
-                "marks": {
-                    "physics": 70,
-                    "history": 80
-                }
-            }
-        }
-    }
-    print(print_value_from_nested_dict(sampleDict))
