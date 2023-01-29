@@ -24,7 +24,8 @@ def test_merge_two_dicts_into_one_happy_path():
 
 
 def test_merge_two_dicts_into_one_with_the_same_dicts():
-    assert merge_two_dicts_into_one({"one": 1, "two": 2}, {"one": 1, "two": 2}) == {"one": 1, "two": 2}
+    assert merge_two_dicts_into_one({"one": 1, "two": 2}, {"one": 1, "two": 2}) == {"one": 1,
+                                                                                    "two": 2}
 
 
 def test_merge_two_dicts_into_one_when_one_of_dict_is_empty():
