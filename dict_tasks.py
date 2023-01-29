@@ -14,6 +14,6 @@ def merge_two_dicts_into_one(dict1: Dict[str, int], dict2: Dict[str, int]) -> Di
     return merged_dict
 
 
-def print_value_from_nested_dict(input_dict: Dict[str, Dict[str, Dict[str, Dict[str, int]]]]) -> int:
-    result = input_dict["class"]["student"]["marks"]["history"]
+def print_value_from_nested_dict(input_dict: Dict[str, Dict[str, Dict[str, Dict[str, int]]]], subject: str) -> int:
+    result = input_dict["class"]["student"]["marks"][subject]
     return result

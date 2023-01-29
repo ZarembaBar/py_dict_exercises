@@ -38,9 +38,13 @@ def test_print_value_from_nested_dict_happy_path():
                 "name": "Mike",
                 "marks": {
                     "physics": 70,
-                    "history": 80
+                    "history": 80,
+                    "math": 50
                 }
             }
         }
     }
-    assert print_value_from_nested_dict(sampleDict) == 80
+    assert print_value_from_nested_dict(sampleDict, "history") == 80
+    assert print_value_from_nested_dict(sampleDict, "physics") == 70
+    assert print_value_from_nested_dict(sampleDict, "math") == 50
+
