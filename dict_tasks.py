@@ -19,9 +19,17 @@ def print_value_from_nested_dict(input_dict: Dict[str, Dict[str, Dict[str, Dict[
     return result
 
 
-def create_new_dict_from_extracted_values_of_another_dict(input_dict: Dict[str, Any], keys: List[str]) -> Dict[str, Any]:
+def create_new_dict_from_extracted_values_of_another_dict(input_dict: Dict[str, Any], keys: List[str]) -> Dict[
+    str, Any]:
     new_dict = {}
     for key in keys:
         if key in input_dict:
             new_dict.update({key: input_dict[key]})
     return new_dict
+
+
+def delete_given_list_of_keys_with_their_values(input_dict: Dict[str, Any], keys: List[str]) -> Dict[str, Any]:
+    for key in keys:
+        if key in input_dict:
+            input_dict.pop(key)
+    return input_dict
