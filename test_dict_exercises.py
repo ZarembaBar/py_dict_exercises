@@ -1,5 +1,6 @@
 from dict_tasks import convert_input_lists_into_dict, merge_two_dicts_into_one, \
-    print_value_from_nested_dict, create_new_dict_from_extracted_values_of_another_dict
+    print_value_from_nested_dict, create_new_dict_from_extracted_values_of_another_dict, \
+    delete_given_list_of_keys_with_their_values
 
 
 def test_convert_input_list_into_dict_happy_path():
@@ -59,3 +60,37 @@ def test_create_new_dict_from_extracted_values_of_another_dict_happy_path():
     assert create_new_dict_from_extracted_values_of_another_dict(sample_dict, ["name"]) == {"name": "Kelly"}
     assert create_new_dict_from_extracted_values_of_another_dict(sample_dict, ["age", "name"]) == {"age": 25,
                                                                                                    "name": "Kelly"}
+
+
+def test_delete_given_list_of_keys_with_their_values_happy_path():
+    sample_dict = {
+        "name": "Kelly",
+        "age": 25,
+        "salary": 8000,
+        "city": "New york"
+    }
+    assert delete_given_list_of_keys_with_their_values(sample_dict, ["name", "age"]) == {"salary": 8000,
+                                                                                         "city": "New york"}
+
+
+def test_delete_given_list_of_keys_with_their_values_with_empty_list_of_keys_given():
+    sample_dict = {
+        "name": "Kelly",
+        "age": 25,
+        "salary": 8000,
+        "city": "New york"
+    }
+    assert delete_given_list_of_keys_with_their_values(sample_dict, []) == {"name": "Kelly",
+                                                                            "age": 25,
+                                                                            "salary": 8000,
+                                                                            "city": "New york"}
+
+
+def test_delete_given_list_of_keys_with_their_values_with_list_of_all_keys_given():
+    sample_dict = {
+        "name": "Kelly",
+        "age": 25,
+        "salary": 8000,
+        "city": "New york"
+    }
+    assert delete_given_list_of_keys_with_their_values(sample_dict, ["name", "age", "salary", "city"]) == {}
