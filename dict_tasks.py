@@ -33,3 +33,11 @@ def delete_given_list_of_keys_with_their_values(input_dict: Dict[str, Any], keys
         if key in input_dict:
             input_dict.pop(key)
     return input_dict
+
+
+def search_if_value_exists_in_dict(input_dict: Dict[str, int], value: int) -> str:
+    list_of_values = input_dict.values()
+    if value in list_of_values:
+        return f"{value} present in a dict"
+    else:
+        return f"{value} is not in a dict"
