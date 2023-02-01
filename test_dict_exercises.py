@@ -8,8 +8,18 @@ def test_convert_input_list_into_dict_happy_path():
     assert convert_input_lists_into_dict(["one", "two", "three"], [1, 2, 3]) == {"one": 1, "two": 2, "three": 3}
 
 
-def test_convert_input_list_into_dict_empty_keys_list():
-    assert convert_input_lists_into_dict([], [1, 2, 3]) == {}
+def test_convert_input_list_into_dict_if_first_list_is_shorter_the_second():
+    try:
+        assert convert_input_lists_into_dict([], [1, 2, 3]) == {}
+    except ValueError:
+        assert "Lists have to be the same lenght"
+
+
+def test_convert_input_list_into_dict_if_second_ist_is_shorter_the_first():
+    try:
+        assert convert_input_lists_into_dict(["one", "two", "three"], []) == {}
+    except ValueError:
+        assert "Lists have to be the same lenght"
 
 
 def test_convert_input_list_into_dict_empty_both_lists():
